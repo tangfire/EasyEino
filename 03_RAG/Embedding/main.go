@@ -3,11 +3,17 @@ package main
 import (
 	"context"
 	"github.com/cloudwego/eino-ext/components/embedding/ark"
+	"github.com/joho/godotenv"
 	"os"
 	"time"
 )
 
 func main() {
+
+	err := godotenv.Load(".env")
+	if err != nil {
+		panic(err)
+	}
 	ctx := context.Background()
 
 	// 初始化嵌入器
